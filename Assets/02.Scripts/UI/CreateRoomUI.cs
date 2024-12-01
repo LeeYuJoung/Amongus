@@ -35,7 +35,7 @@ public class CreateRoomUI : MonoBehaviour
 
         for (int i = 0; i < imposterCountButtons.Count; i++)
         {
-            if (i == count - 4)
+            if (i == count - 1)
             {
                 imposterCountButtons[i].image.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
             }
@@ -60,7 +60,7 @@ public class CreateRoomUI : MonoBehaviour
         // limitMaxPlayer 보다 작은 플레이어 버튼은 선택할 수 없도록 비활성화
         for(int i = 0; i < maxPlayerCountButtons.Count; i++)
         {
-            var text = maxPlayerCountButtons[i].GetComponent<Text>();
+            var text = maxPlayerCountButtons[i].GetComponentInChildren<Text>();
 
             if(i < limitMaxPlayer - 4)
             {
@@ -73,6 +73,8 @@ public class CreateRoomUI : MonoBehaviour
                 text.color = Color.white;
             }
         }
+
+        UpdateCrewImages();
     }
 
     // 최대 인원 수 선택
@@ -95,6 +97,7 @@ public class CreateRoomUI : MonoBehaviour
         UpdateCrewImages();
     }
 
+    // 크루원 이미지 변경
     private void UpdateCrewImages()
     {
         for(int i = 0; i < crewImages.Count; i++)
