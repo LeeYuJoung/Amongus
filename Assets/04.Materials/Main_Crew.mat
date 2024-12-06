@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Main_Crew
-  m_Shader: {fileID: -6465566751694194690, guid: efc4a317519e99349b2c48988778f926, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 265fa463b07474943a567ccaac0e6c79, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fc4e4c866473f284cbbc25f24948100c, type: 3}
+        m_Texture: {fileID: 2800000, guid: e25b8fb341eb6d046a7b41d321fe02b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -60,6 +60,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerColor: {r: 1, g: 0.9435827, b: 0, a: 0}
+    - _PlayerColor: {r: 1, g: 1, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

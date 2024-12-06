@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
 public class CreateRoomUI : MonoBehaviour
 {
@@ -134,6 +135,15 @@ public class CreateRoomUI : MonoBehaviour
                 crewImages[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public void CreateRoom()
+    {
+        var manager = RoomManager.singleton;
+
+        // 방 설정 작업 처리
+        // 서버를 여는 동시에 Client로써 게임에 참가하도록 만들어주는 함수
+        manager.StartHost();
     }
 }
 
