@@ -8,5 +8,12 @@ using Mirror;
 // Room Scene (플레이어들이 접속해서 게임이 준비되기를 기다리는 대기실 씬)
 public class RoomManager : NetworkRoomManager
 {
+    // 서버에서 새로 접속한 클라이언트를 감지했을 때 동작
+    public override void OnRoomServerConnect(NetworkConnectionToClient conn)
+    {
+        base.OnRoomServerConnect(conn);
 
+        var player = Instantiate(spawnPrefabs[0]);
+        NetworkServer.Spawn(player, conn);
+    }
 }
