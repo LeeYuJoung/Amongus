@@ -6,6 +6,8 @@ using Unity.VisualScripting;
 
 public class CharacterMove : NetworkBehaviour
 {
+    private Animator animator;
+
     public bool isMoveable;
 
     [SyncVar]
@@ -13,6 +15,8 @@ public class CharacterMove : NetworkBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         // 카메라를 Client가 소유한 캐릭터에 붙이도록 함
         if (isOwned)
         {
@@ -30,9 +34,11 @@ public class CharacterMove : NetworkBehaviour
 
     public void Move()
     {
-        // hasAuthority 버전 업그레이드로 인한 변경 => isOwned
+        // hasAuthority 버전 업그레이드로 변경됨 => isOwned
         if (isOwned && isMoveable)
         {
+            bool isMove = false;
+
             if(PlayerSettings.controlType == EControlType.KeyboaedMouse)
             {
                 Vector3 dir = Vector3.ClampMagnitude(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f), 1.0f);
@@ -47,6 +53,7 @@ public class CharacterMove : NetworkBehaviour
                 }
 
                 transform.position += dir * speed * Time.deltaTime;
+                isMove = dir.magnitude != 0.0f;
             }
             else
             {
@@ -64,8 +71,10 @@ public class CharacterMove : NetworkBehaviour
                     }
 
                     transform.position += dir * speed * Time.deltaTime;
+                    isMove = dir.magnitude != 0.0f;
                 }
             }
+            animator.SetBool("isMove", isMove);
         }
     }
 }
