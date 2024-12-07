@@ -7,15 +7,31 @@ using Unity.VisualScripting;
 public class CharacterMove : NetworkBehaviour
 {
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public bool isMoveable;
 
     [SyncVar]
     public float speed = 2.0f;
 
+    // hook : SyncVar 선언된 변수가 서버에서 변경되었을 때 hook으로 등록한 함수가 Clinet에서 호출되도록 함
+    [SyncVar(hook = nameof(SetPlayerColor_Hook))]
+    public EPlayerColor playerColor;
+
+    public void SetPlayerColor_Hook(EPlayerColor oldColor, EPlayerColor newColor)
+    {
+        if(spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        spriteRenderer.material.SetColor("_PlayerColor", PlayerColor.GetColor(newColor));
+    }
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.material.SetColor("_PlayerColor", PlayerColor.GetColor(playerColor));
 
         // 카메라를 Client가 소유한 캐릭터에 붙이도록 함
         if (isOwned)

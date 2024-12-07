@@ -13,9 +13,5 @@ public class RoomManager : NetworkRoomManager
     {
         base.OnRoomServerConnect(conn);
 
-        Vector3 spawnPos = FindObjectOfType<SpawnPositions>().GetSpawnPosition();
-
-        var player = Instantiate(spawnPrefabs[0], spawnPos, Quaternion.identity);
-        NetworkServer.Spawn(player, conn);
     }
 }

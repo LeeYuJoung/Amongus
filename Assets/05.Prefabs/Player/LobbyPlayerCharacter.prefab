@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 3227266554566266578}
   - component: {fileID: 7924741196453831014}
   - component: {fileID: 2992169706503564073}
-  - component: {fileID: 2562039265333437418}
   - component: {fileID: 8991273455256690569}
   - component: {fileID: 2639216281237368387}
-  m_Layer: 0
+  - component: {fileID: 2562039265333437418}
+  - component: {fileID: 6283284197230555502}
+  m_Layer: 6
   m_Name: LobbyPlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 022f98497c6abae4b97e0e9ff4273230, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,23 +180,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2562039265333437418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3227266554566266579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e846b7e19d9266744a518299203a2b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  isMoveable: 0
-  speed: 2
 --- !u!61 &8991273455256690569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,3 +227,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2562039265333437418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227266554566266579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e846b7e19d9266744a518299203a2b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  isMoveable: 0
+  speed: 2
+  playerColor: 0
+--- !u!114 &6283284197230555502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227266554566266579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908136564e4e82e439345a8a2b13516f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingType: 1
