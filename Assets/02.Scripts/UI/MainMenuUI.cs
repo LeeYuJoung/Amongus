@@ -9,6 +9,7 @@ public class MainMenuUI : MonoBehaviour
         Debug.Log("Click Online");
     }
 
+    // 종료 버튼
     public void OnClickQuitButton()
     {
 #if UNITY_EDITOR
