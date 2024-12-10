@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1625653560435024702}
   - component: {fileID: 1625653560435024697}
-  - component: {fileID: 1625653560435024703}
   - component: {fileID: 7151390437273472996}
   - component: {fileID: 7379572618273091954}
+  - component: {fileID: 1625653560435024703}
   m_Layer: 0
   m_Name: FloatingCrew
   m_TagString: Untagged
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1625653560435024703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625653560435024696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7110c67eb644f9b419d4d0ae9e470c9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerColor: 0
 --- !u!58 &7151390437273472996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +124,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1625653560435024703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625653560435024696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7110c67eb644f9b419d4d0ae9e470c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerColor: 0

@@ -12,6 +12,7 @@ public class OnlineUI : MonoBehaviour
     [SerializeField]
     private GameObject createRoomUI;
 
+    // 게임 방 생성
     public void OnClickCreateRoomButton()
     {
         if(nicknameInputField.text != "")
@@ -27,10 +28,13 @@ public class OnlineUI : MonoBehaviour
         }
     }
 
+    // 이미 생성 된 방에 참가
     public void OnClickEnterGameRoomButton()
     {
         if (nicknameInputField.text != "")
         {
+            // 닉네임 저장 확인하기
+
             var manager = RoomManager.singleton;
             manager.StartClient();
         }
