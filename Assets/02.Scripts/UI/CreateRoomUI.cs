@@ -21,10 +21,12 @@ public class CreateRoomUI : MonoBehaviour
     {
         for(int i = 0; i < crewImages.Count; i++)
         {
+            // 크루원 Material을 개별로 생성해주어 각 크루원 색상 변경 시 모든 크루원의 색상이 전부 바뀌는 현상 방지
             Material materialInstance = Instantiate(crewImages[i].material);
             crewImages[i].material = materialInstance;
         }
 
+        // roomData 생성 후 초기화
         roomData = new CreateGameRoomData() { imposterCount = 1, maxPlayerCount = 10 };
         UpdateCrewImages();
     }
@@ -46,8 +48,8 @@ public class CreateRoomUI : MonoBehaviour
             }
         }
 
-        // 임포스터의 수가 1이 아닐 경우 플레이어 수 제한
-        int limitMaxPlayer = count == 1 ? 4 : (count == 2) ? 7 : 9;
+        // 임포스터의 수가 1이 아닐 경우 플레이어 수 지정 제한
+        int limitMaxPlayer = (count == 1) ? 4 : (count == 2) ? 7 : 9;
 
         if(roomData.maxPlayerCount < limitMaxPlayer)
         {
@@ -137,6 +139,7 @@ public class CreateRoomUI : MonoBehaviour
         }
     }
 
+    // 확인 Button 클릭 시 게임 실행
     public void CreateRoom()
     {
         // 방 설정 작업 처리

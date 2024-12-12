@@ -33,8 +33,6 @@ public class OnlineUI : MonoBehaviour
     {
         if (nicknameInputField.text != "")
         {
-            // 닉네임 저장 확인하기
-
             var manager = RoomManager.singleton;
             manager.StartClient();
         }

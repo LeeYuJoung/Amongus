@@ -39,6 +39,7 @@ public class CrewFloater : MonoBehaviour
             crewStates[(int)playerColor] = true;
 
             float angle = Random.Range(0.0f, 360.0f);
+            // Cos : »ï°¢ÇüÀÇ ¹Øº¯(w) / Sin : »ï°¢ÇüÀÇ ³ôÀÌ(h)
             Vector3 spawnPos = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0.0f) * dist;
             Vector3 direction = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f);
             float floatingSpeed = Random.Range(1.0f, 4.0f);
